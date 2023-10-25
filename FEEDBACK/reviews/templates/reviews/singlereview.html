@@ -1,0 +1,27 @@
+{%extends 'reviews/base.html'%}
+
+{%block title%}
+Review Detail
+{%endblock%}
+
+ 
+{%block content%}
+     <h1>{{selected_review.user_name}}</h1>
+     <p>Rating:{{selected_review.rating}}</p>
+     <p>{{selected_review.review_text}}</p>
+     {% comment %} {% if fav_id  %}
+       <p>Favorite review</p>
+     {% else %}
+        <form action="/reviews/favorite" method='POST'>
+           {% csrf_token %}
+           <input type="hidden" name='review_id' value="{{selected_review.id}}">
+           <button>Favourite</button>
+         </form>
+     {% endif%} {% endcomment %}
+
+     
+     
+
+{%endblock%}
+
+{% comment %} here action in  a form will lead to URL for this request {% endcomment %}

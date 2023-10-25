@@ -1,0 +1,19 @@
+{% load static%}
+{% comment %} {%block css_files%}{%static 'blog/index.css'%} {%endblock%} {% endcomment %}
+
+<li>
+    <article class='post'>
+      <a href="{%url 'post_detail' post2.slug %}">
+        <img src="{{post2.image.url}}" alt="Mountain Hiking">
+        <div class='post__content'>
+          <h3>
+            {{post2.title}} 
+            {% comment %} title is such that accessing key value post2{'title'} {% endcomment %}
+          </h3>
+          <p>
+            {{post2.excerpt}}
+          </p>        
+        </div>
+      </a>
+    </article>
+  </li>

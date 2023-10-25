@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block title%}My blog{% endblock %}
+
+{%block css_files%} 
+
+  <link rel="stylesheet" href="{% static 'blog/posts.css'%}">  
+   <link rel="stylesheet" href="{% static 'blog/index.css'%}">
+{%endblock%}
+
+
+{%block content%}
+ 
+  <section id='welcome'>
+    <header>
+      <img src="{%static 'blog/images/writer.jpg'%}" alt="The author of this blog">
+      <h2>William James</h2>
+    </header>
+    <p>Hi,I am Willam and I love to blog about the world and tech!</p>
+  </section>
+
+  <section id='latest-posts'>
+    <h2>My latest thoughts</h2>
+
+    <ul>
+      {%for post2 in posts1%}
+        {%include 'blog/includes/post.html' %}
+      {% endfor %}
+
+       
+    </ul>
+
+
+  </section>
+
+  <section id='about'>
+    <h2>What I do</h2>
+    <p>
+      I love programming
+    </p>
+    <p>
+      Writing with all the good thoughts makes me free! Through the perspective I build I do all those works.
+
+    </p>
+
+  </section>
+  
+{%endblock%}

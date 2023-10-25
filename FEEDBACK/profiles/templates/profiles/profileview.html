@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile view</title>
+</head>
+<body>
+    <ul>
+         
+            {%for profile1 in profile%}
+              <li>
+                <img src="{{ profile1.image.url}}" alt="">
+              </li>
+
+            {%endfor%}
+         
+    </ul>
+    
+</body>
+</html>
